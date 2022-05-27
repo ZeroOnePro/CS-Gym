@@ -1,3 +1,11 @@
+# System Structure & Program Execution 1
+
+[1.컴퓨터 시스템의 구조](#1-컴퓨터-시스템의-구조)
+
+[2.입출력의 수행](#2-입출력의-수행)
+
+[3.인터럽트](#3-인터럽트)
+
 ## 1. 컴퓨터 시스템의 구조
 
 ![1](https://user-images.githubusercontent.com/48282185/170663025-4fcac455-505a-458a-bd36-5cc191e9a913.png)
