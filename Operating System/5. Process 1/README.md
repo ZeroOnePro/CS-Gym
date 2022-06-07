@@ -1,5 +1,19 @@
 # 5. Process 1
 
+[1. 프로세스의 개념](#1-프로세스의-개념)
+
+[2. 프로세스의 상태](#2-프로세스의-상태process-state)
+
+[3. Process Control Block](#3-process-control-blockpcb)
+
+[4. Context Switch](#4-context-switch)
+
+[5. 프로세스를 스케줄링하기 위한 큐](#5-프로세스를-스케줄링하기-위한-큐)
+
+[6. 스케줄러](#6-스케줄러)
+
+[7. 프로세스 상태도](#7-프로세스-상태도)
+
 ## 1. 프로세스의 개념
 
 ![1](https://user-images.githubusercontent.com/48282185/172328052-0fe2d521-46fb-4631-a0af-252169f64a0e.png)
@@ -27,40 +41,40 @@
       - 프로세스들 간에 공유 자원으로써 각 프로세스마다 별도로 관리되어야 충돌문제를 막을 수 있다.
   - 프로세스 여러개가 같이 실행되는 multi tasking환경에서 context를 모른다면, 다음 실행차례가 왔을 때 어디를 실행하고 있던건지 알 수 없기 때문에, 이어서 작업을 진행하려면 반드시 필요한 정보이다.
 
-  ## 2. 프로세스의 상태(Process State)
+## 2. 프로세스의 상태(Process State)
 
-  ![2](https://user-images.githubusercontent.com/48282185/172328048-f9109d21-96e1-454b-ab37-094d48d3ead7.png)
+![2](https://user-images.githubusercontent.com/48282185/172328048-f9109d21-96e1-454b-ab37-094d48d3ead7.png)
 
-  - 프로세는 상태(state)가 변경되며 수행된다.
+- 프로세는 상태(state)가 변경되며 수행된다.
 
-    - Running
-      - CPU를 잡고 instruction을 수행 중인 상태
-    - Ready
-      - CPU를 기다리는 상태
-      - 메모리에 다음에 수행할 instruction을 올려놓아야함 CPU만 얻으면 바로 수행할 수 있는 상태, 즉 수행중이지 않더라도 최소한의 메모리 공간은 있음
-    - Blocked(wait, sleep)
-      - CPU를 주어도 당장 instruction을 수행할 수 없는 상태
-      - 프로세스 자신이 요청한 event(IO 등)가 즉시 만족되지 않아 이를 기다리는 상태
-    - Suspended(stopped)
-      - 외부적인 이유로 프로세스의 수행이 정지된 상태
-      - 프로세스는 통째로 디스크에 swap out된다.
-      - 예시로 사용자가 프로그램을 일시 정지시킨 경우(break key), 시스템이 여러 이유로 프로세스를 잠시 중단시킴(메모리에 너무 많은 프로세스가 올라와 있을 때)
-    - New
-      - 프로세스가 생성중인 상태
-    - Terminated
+  - Running
+    - CPU를 잡고 instruction을 수행 중인 상태
+  - Ready
+    - CPU를 기다리는 상태
+    - 메모리에 다음에 수행할 instruction을 올려놓아야함 CPU만 얻으면 바로 수행할 수 있는 상태, 즉 수행중이지 않더라도 최소한의 메모리 공간은 있음
+  - Blocked(wait, sleep)
+    - CPU를 주어도 당장 instruction을 수행할 수 없는 상태
+    - 프로세스 자신이 요청한 event(IO 등)가 즉시 만족되지 않아 이를 기다리는 상태
+  - Suspended(stopped)
+    - 외부적인 이유로 프로세스의 수행이 정지된 상태
+    - 프로세스는 통째로 디스크에 swap out된다.
+    - 예시로 사용자가 프로그램을 일시 정지시킨 경우(break key), 시스템이 여러 이유로 프로세스를 잠시 중단시킴(메모리에 너무 많은 프로세스가 올라와 있을 때)
+  - New
+    - 프로세스가 생성중인 상태
+  - Terminated
 
-      - execution이 끝나고 종료 중인 상태
-      - 수행이 끝나고 프로세스를 끝내기 위한 정리작업이 있다.
-      - 프로세스가 끝났다면 프로세스가 아니다.
+    - execution이 끝나고 종료 중인 상태
+    - 수행이 끝나고 프로세스를 끝내기 위한 정리작업이 있다.
+    - 프로세스가 끝났다면 프로세스가 아니다.
 
-    - Blocked vs Suspended - blocked는 자신이 요청한 event가 만족되면 다시 ready상태로 돌아감 - suspended는 외부에서 재개시켜줘야 다시 active한 상태로 돌아감
-      ![3](https://user-images.githubusercontent.com/48282185/172328041-931bdd51-bac2-4dc3-b23a-0a3760fb34f4.png)
-      ![4](https://user-images.githubusercontent.com/48282185/172328039-0f346b27-72f2-4ee8-804e-ca11ac23a356.png)
+  - Blocked vs Suspended - blocked는 자신이 요청한 event가 만족되면 다시 ready상태로 돌아감 - suspended는 외부에서 재개시켜줘야 다시 active한 상태로 돌아감
+    ![3](https://user-images.githubusercontent.com/48282185/172328041-931bdd51-bac2-4dc3-b23a-0a3760fb34f4.png)
+    ![4](https://user-images.githubusercontent.com/48282185/172328039-0f346b27-72f2-4ee8-804e-ca11ac23a356.png)
 
-  - 기본적으로 프로세스들은 수행 차례를 위해 Ready Queue에 들어가서 차례를 기다린다.(FIFO는 아님, 우선순위에 따라 스케쥴됨)
-  - IO작업이 필요한 프로세스의 경우 해당 장치에 맞는 IO대기 큐로 들어가서 자신이 요청했던 IO를 기다린다.(waiting 상태), IO가 끝나면 IO의 컨트롤러들은 CPU에 인터럽트를 보내고, 해당 인터럽트를 받은 CPU는 커널 핸들러를 수행한다음 다음 작업을 이행한다. IO 큐에 있던 프로세스는 다시 ready queue로 보내진다. 프로세스의 상태 변경 코드도 커널 핸들러에 포함되어 있지 않을까?
-  - 공유데이터는 프로세스간에 공유되는 데이터인데, 다수개의 프로세스가 이 공유데이터에 동시에 접근하면, 무결성이 깨지기 때문에 한 순간에 한 개의 프로세스만 접근할 수 있도록 구현해야한다. 이 때 한 프로세스가 공유데이터를 읽기 또는 쓰기하고 있다면, 다른 프로세스는 그 작업을 기다려야하기때문에 오래 걸린다. 따라서 리소스 큐에 들어가서 해당 작업이 끝나기를 기다린다.(waiting 상태)
-  - 각종 queue들은 커널의 data 영역에 위치하고 있다.
+- 기본적으로 프로세스들은 수행 차례를 위해 Ready Queue에 들어가서 차례를 기다린다.(FIFO는 아님, 우선순위에 따라 스케쥴됨)
+- IO작업이 필요한 프로세스의 경우 해당 장치에 맞는 IO대기 큐로 들어가서 자신이 요청했던 IO를 기다린다.(waiting 상태), IO가 끝나면 IO의 컨트롤러들은 CPU에 인터럽트를 보내고, 해당 인터럽트를 받은 CPU는 커널 핸들러를 수행한다음 다음 작업을 이행한다. IO 큐에 있던 프로세스는 다시 ready queue로 보내진다. 프로세스의 상태 변경 코드도 커널 핸들러에 포함되어 있지 않을까?
+- 공유데이터는 프로세스간에 공유되는 데이터인데, 다수개의 프로세스가 이 공유데이터에 동시에 접근하면, 무결성이 깨지기 때문에 한 순간에 한 개의 프로세스만 접근할 수 있도록 구현해야한다. 이 때 한 프로세스가 공유데이터를 읽기 또는 쓰기하고 있다면, 다른 프로세스는 그 작업을 기다려야하기때문에 오래 걸린다. 따라서 리소스 큐에 들어가서 해당 작업이 끝나기를 기다린다.(waiting 상태)
+- 각종 queue들은 커널의 data 영역에 위치하고 있다.
 
 ## 3. Process Control Block(PCB)
 
@@ -93,7 +107,7 @@
   - ISR = interrupt service routine
   - 사용자 프로세스 to 사용자 프로세스로 넘어가는 과정을 context switch라고 부르는 것이지 사용자 프로세스에서 운영체제로 CPU 제어권이 넘어가는 것을 context switch라고 하지는 않는다.
 
-## 5. 프로세스를 스케쥴링하기 위한 큐
+## 5. 프로세스를 스케줄링하기 위한 큐
 
 ![7](https://user-images.githubusercontent.com/48282185/172328026-c067775a-295e-40f5-abbe-72148c39b647.png)
 
@@ -136,3 +150,7 @@
 - blocked에서 suspended가 되었나, ready에서 suspended가 되었나로 suspended도 두 가지 상태로 나눠놓을 수 있다.
   - suspended상태에서 어떤 이벤트가 일어나거나(예로 정지상태 해제 등) suspended가 되기 전 시켰던 IO작업이 완료된 경우 blocked에서 ready로 상태가 변경될 수 있다.
   - 메모리에 올라와있지 않은 상태로 CPU를 사용하여 무엇인가 할 수 없다. 프로세스 스스로 어떤 것도 할 수 없고, 외부에서 재개해줘야함
+
+> 출처
+> ABRAHAM SILBERSCHATZ ET AL., OPERATING SYSTEM CONCEPTS, NINTH EDITION, WILEY, 2013
+> 반효경, 운영체제와 정보기술의 원리, 이화여자대학교 출판부, 2008
