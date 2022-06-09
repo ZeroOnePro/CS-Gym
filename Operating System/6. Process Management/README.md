@@ -1,17 +1,11 @@
 # 7. Process Management
 
-[1. 프로세스 생성](#1-프로세스-생성process-creation)
-
-[2. 프로세스 종료](#2-프로세스-종료process-termination)
-
-[3. fork()](#3-fork-시스템-콜)
-
-[4. exec()](#4-exec-시스템-콜)
-
-[5. wait()](#5-wait-시스템-콜)
-
-[6. exit()](#6-exit-시스템-콜)
-
+[1. 프로세스 생성](#1-프로세스-생성process-creation)  
+[2. 프로세스 종료](#2-프로세스-종료process-termination)  
+[3. fork()](#3-fork-시스템-콜)  
+[4. exec()](#4-exec-시스템-콜)  
+[5. wait()](#5-wait-시스템-콜)  
+[6. exit()](#6-exit-시스템-콜)  
 [7. 프로세스 간 협력](#7-프로세스-간-협력)
 
 ## 1. 프로세스 생성(Process Creation)
