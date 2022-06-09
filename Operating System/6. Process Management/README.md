@@ -169,3 +169,9 @@ int main(int argc, char *argv[]){
     - 주소 공간에 겹치는 영역이 있음
   - thread
     - thread는 사실상 하나의 프로세스이므로 프로세스 간 협력으로 보기는 어렵지만 동일한 process를 구성하는 thread들 간에는 주소 공간을 공유하므로 협력이 가능
+
+> 출처
+
+> ABRAHAM SILBERSCHATZ ET AL., OPERATING SYSTEM CONCEPTS, NINTH EDITION, WILEY, 2013
+
+> 반효경, 운영체제와 정보기술의 원리, 이화여자대학교 출판부, 2008
