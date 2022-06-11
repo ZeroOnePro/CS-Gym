@@ -1,18 +1,20 @@
 # 5. Process 1
 
-[1. 프로세스의 개념](#1-프로세스의-개념)
+<!--ts-->
 
-[2. 프로세스의 상태](#2-프로세스의-상태process-state)
+- [5. Process 1](#5-process-1)
+  - [1. 프로세스의 개념](#1-프로세스의-개념)
+  - [2. 프로세스의 상태(Process State)](#2-프로세스의-상태process-state)
+  - [3. Process Control Block(PCB)](#3-process-control-blockpcb)
+  - [4. Context Switch](#4-context-switch)
+  - [5. 프로세스를 스케줄링하기 위한 큐](#5-프로세스를-스케줄링하기-위한-큐)
+  - [6. 스케줄러](#6-스케줄러)
+  - [7. 프로세스 상태도](#7-프로세스-상태도)
 
-[3. Process Control Block](#3-process-control-blockpcb)
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 6월 11일 토요일 15시 35분 51초 KST -->
 
-[4. Context Switch](#4-context-switch)
-
-[5. 프로세스를 스케줄링하기 위한 큐](#5-프로세스를-스케줄링하기-위한-큐)
-
-[6. 스케줄러](#6-스케줄러)
-
-[7. 프로세스 상태도](#7-프로세스-상태도)
+<!--te-->
 
 ## 1. 프로세스의 개념
 

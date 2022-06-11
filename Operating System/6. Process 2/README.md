@@ -1,12 +1,17 @@
 # 6. Process 2
 
-[1. Thread](#1-thread)
+<!--ts-->
 
-[2. Thread를 사용하는 이유](#2-thread를-사용하는-이유)
+- [6. Process 2](#6-process-2)
+  - [1. Thread](#1-thread)
+  - [2. Thread를 사용하는 이유](#2-thread를-사용하는-이유)
+  - [3. Thread의 장점](#3-thread의-장점)
+  - [4. Thread의 구현](#4-thread의-구현)
 
-[3. Thread의 장점](#3-thread의-장점)
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 6월 11일 토요일 15시 35분 38초 KST -->
 
-[4. Thread의 구현](#4-thread의-구현)
+<!--te-->
 
 ## 1. Thread
 

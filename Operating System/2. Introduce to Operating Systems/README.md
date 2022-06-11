@@ -1,14 +1,18 @@
 # 2. introduce to Operating Systems
 
-[1. 운영체제란 무엇인가?](#1-운영체제란-무엇인가)
+<!--ts-->
 
-[2. 운영체제의 분류](#2-운영체제의-분류)
+- [2. introduce to Operating Systems](#2-introduce-to-operating-systems)
+  - [1. 운영체제란 무엇인가?](#1-운영체제란-무엇인가)
+  - [2. 운영체제의 분류](#2-운영체제의-분류)
+  - [3. 용어 정리](#3-용어-정리)
+  - [4. 운영체제의 예](#4-운영체제의-예)
+  - [5. 운영체제의 구조](#5-운영체제의-구조)
 
-[3. 용어 정리](#3-용어-정리)
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 6월 11일 토요일 15시 37분 11초 KST -->
 
-[4. 운영체제의 예](#4-운영체제의-예)
-
-[5. 운영체제의 구조](#5-운영체제의-구조)
+<!--te-->
 
 ## 1. 운영체제란 무엇인가?
 

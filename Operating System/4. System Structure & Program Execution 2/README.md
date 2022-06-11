@@ -1,20 +1,21 @@
 # 4. System Structure & Program Execution 2
 
-[1. 동기식 입출력과 비동기식 입출력](#1-동기식-입출력과-비동기식-입출력)
+<!--ts-->
 
-[2. DMA(Direct Memory Access)](#2-dmadirect-memory-access)
+- [4. System Structure &amp; Program Execution 2](#4-system-structure--program-execution-2)
+  - [1. 동기식 입출력과 비동기식 입출력](#1-동기식-입출력과-비동기식-입출력)
+  - [2. DMA(Direct Memory Access)](#2-dmadirect-memory-access)
+  - [3. 서로 다른 입출력 명령어](#3-서로-다른-입출력-명령어)
+  - [4. 저장장치 계층 구조](#4-저장장치-계층-구조)
+  - [5. 프로그램의 실행(메모리 load)](#5-프로그램의-실행메모리-load)
+  - [6. 커널 주소 공간의 내용](#6-커널-주소-공간의-내용)
+  - [7. 사용자 프로그램이 사용하는 함수](#7-사용자-프로그램이-사용하는-함수)
+  - [8. 프로그램의 실행](#8-프로그램의-실행)
 
-[3. 서로 다른 입출력 명령어](#3-서로-다른-입출력-명령어)
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 6월 11일 토요일 15시 36분 28초 KST -->
 
-[4. 저장장치 계층 구조](#4-저장장치-계층-구조)
-
-[5. 프로그램의 실행(메모리 load)](#5-프로그램의-실행메모리-load)
-
-[6. 커널 주소 공간의 내용](#6-커널-주소-공간의-내용)
-
-[7. 사용자 프로그램이 사용하는 함수](#7-사용자-프로그램이-사용하는-함수)
-
-[8. 프로그램의 실행](#8-프로그램의-실행)
+<!--te-->
 
 ## 1. 동기식 입출력과 비동기식 입출력
 

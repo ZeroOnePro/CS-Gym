@@ -1,10 +1,16 @@
 # System Structure & Program Execution 1
 
-[1. 컴퓨터 시스템의 구조](#1-컴퓨터-시스템의-구조)
+<!--ts-->
 
-[2. 입출력의 수행](#2-입출력의-수행)
+- [System Structure &amp; Program Execution 1](#system-structure--program-execution-1)
+  - [1. 컴퓨터 시스템의 구조](#1-컴퓨터-시스템의-구조)
+  - [2. 입출력의 수행](#2-입출력의-수행)
+  - [3. 인터럽트](#3-인터럽트)
 
-[3. 인터럽트](#3-인터럽트)
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 6월 11일 토요일 15시 36분 51초 KST -->
+
+<!--te-->
 
 ## 1. 컴퓨터 시스템의 구조
 
