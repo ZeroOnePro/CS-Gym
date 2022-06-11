@@ -1,5 +1,20 @@
 # 8. CPU Scheduling
 
+<!--ts-->
+
+- [8. CPU Scheduling](#8-cpu-scheduling)
+  - [1. CPU and IO Bursts in Program Execution](#1-cpu-and-io-bursts-in-program-execution)
+  - [2. 프로세스의 특성 분류](#2-프로세스의-특성-분류)
+  - [3. CPU burst Time의 분포](#3-cpu-burst-time의-분포)
+  - [4. CPU Sheduler &amp; Dispatcher](#4-cpu-sheduler--dispatcher)
+  - [5. Scheduling Algorithms](#5-scheduling-algorithms)
+  - [6. Scheduling Criteria](#6-scheduling-criteria)
+
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 6월 12일 일요일 04시 48분 33초 KST -->
+
+<!--te-->
+
 ## 1. CPU and IO Bursts in Program Execution
 
 ![1](https://user-images.githubusercontent.com/48282185/173064960-c86adcba-638e-4b36-b2be-2a74ff8212bc.png)
