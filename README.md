@@ -7,6 +7,7 @@
   - [궁금해 하지않으면 더 이상 깊어질 수 없다](#궁금해-하지않으면-더-이상-깊어질-수-없다)
   - [Output 활성화](#output-활성화)
   - [정리 방식](#정리-방식)
+  - [스크립트](#스크립트)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
 <!-- Added by: sungminyou, at: 2022년 6월 13일 월요일 14시 06분 36초 KST -->
