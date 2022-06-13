@@ -269,3 +269,9 @@
 - Simulation(모의 실험)
   - 알고리즘을 모의 프로그램으로 작성 후 trace를 입력으로 하여 결과 비교
   - 실제 프로세스들의 데이터(trace)를 수집하여 시뮬레이션으로 돌리면 더 신빙성 있는 결과가 된다.
+
+> 출처
+
+> ABRAHAM SILBERSCHATZ ET AL., OPERATING SYSTEM CONCEPTS, NINTH EDITION, WILEY, 2013
+
+> 반효경, 운영체제와 정보기술의 원리, 이화여자대학교 출판부, 2008
