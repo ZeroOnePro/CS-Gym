@@ -21,7 +21,7 @@
   - [16. Algorithm Evaluation](#16-algorithm-evaluation)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sungminyou, at: 2022년 6월 13일 월요일 13시 40분 24초 KST -->
+<!-- Added by: sungminyou, at: 2022년 6월 13일 월요일 13시 56분 23초 KST -->
 
 <!--te-->
 
@@ -271,7 +271,5 @@
   - 실제 프로세스들의 데이터(trace)를 수집하여 시뮬레이션으로 돌리면 더 신빙성 있는 결과가 된다.
 
 > 출처
-
 > ABRAHAM SILBERSCHATZ ET AL., OPERATING SYSTEM CONCEPTS, NINTH EDITION, WILEY, 2013
-
 > 반효경, 운영체제와 정보기술의 원리, 이화여자대학교 출판부, 2008
