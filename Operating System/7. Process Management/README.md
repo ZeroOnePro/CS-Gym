@@ -38,10 +38,14 @@
 - UNIX에서의 예시
   - 시스템 콜을 쓴다는 거부터가 운영체제를 통해서만 가능하다는 것을 의미
   - fork() 시스템 콜을 통해 새로운 프로세스를 생성한다.
+
     - 부모를 그대로 복사한다.(PID를 제외한 모든 OS 데이터)
     - 주소공간 할당
+
       [linux/fork.c at 34f4335c16a5f4bb7da6c8d2d5e780b6a163846a · torvalds/linux](https://github.com/torvalds/linux/blob/34f4335c16a5f4bb7da6c8d2d5e780b6a163846a/kernel/fork.c#L1975)
+
     - 리눅스에서 fork 구현체 일부 프로세스 복제 과정
+
   - fork 다음에 이어지는 exec() 시스템 콜을 통해 새로운 프로그램을 메모리에 올린다.
 
 ## 2. 프로세스 종료(Process Termination)
