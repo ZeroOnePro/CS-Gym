@@ -14,9 +14,15 @@
   - [9. Algorithm 2](#9-algorithm-2)
   - [10. Algorithm 3(Peterson’s Algorithm)](#10-algorithm-3petersons-algorithm)
   - [11. Synchronization Hardware](#11-synchronization-hardware)
+  - [12. Semaphores](#12-semaphores)
+  - [13. Critical Section of n Processes](#13-critical-section-of-n-processes)
+  - [14. Block / Wakeup 구현](#14-block--wakeup-구현)
+  - [15. Busy wait vs Block / wakeup](#15-busy-wait-vs-block--wakeup)
+  - [16. Semaphore의 두 가지 유형](#16-semaphore의-두-가지-유형)
+  - [17. Deadlock and Starvation](#17-deadlock-and-starvation)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sungminyou, at: 2022년 6월 15일 수요일 19시 15분 11초 KST -->
+<!-- Added by: sungminyou, at: 2022년 6월 15일 수요일 20시 10분 48초 KST -->
 
 <!--te-->
 
@@ -171,3 +177,117 @@
   ```
 
   - test_and_set(lock)은 lock이 true인지 검사하고 값을 true로 바꾸는 것이 atomic하게 실행됨
+
+## 12. Semaphores
+
+- 앞의 방식들을 추상화(논리적 object + operation, 구현 측면 x, 논리 측면)시킴
+- semaphore S
+
+  - 정수값
+  - 사용 가능 자원의 개수(S=5, 자원 5개)
+  - 아래의 두 가지 atomic 연산에 의해서만 접근 가능
+
+  ```c
+  P(S) // 자원을 가져가는 연산, lock
+
+  while(S<=0) do no-op; // 작업없이 대기
+  S--; // 자원의 수 감소
+  ```
+
+  ```c
+  V(S) // 자원을 반납하는 연산, unlock
+
+  S++; // 자원의 수 증가
+  ```
+
+  - S가 양수라면, 감소시키고 critical section으로 진입 가능
+  - Ohterwise, 양수가 되기까지 대기(busy wait)
+
+## 13. Critical Section of n Processes
+
+```c
+semaphore mutex; // 초기값을 1로 설정, 1개가 CS내로 진입가능
+
+do{
+	P(mutex);
+	critical section
+	V(mutext);
+	remainder section
+}while(1);
+```
+
+- busy wait(spin lock)는 효율적이지 못함
+- block & wakeup(sleep lock) 방식의 구현
+- 추상자료형이니 구현은 하기 나름
+
+## 14. Block / Wakeup 구현
+
+- semaphore를 아래와 같이 정의
+
+```c
+typedef struct {
+	int value; // 세마포어 변수 S
+	struct process *L; // block된 프로세스들을 연결할 자료구조
+}semaphore;
+
+void P(semaphore& S){
+	S.value--;
+	if(S.value < 0){
+		add this process to S.L;
+		block();
+	}
+}
+
+void V(semaphore& S){
+	S.value++;
+	if(S.value <= 0){
+	// S의 value가 증가되었음에도 음수인 이유는 이 자원을 기다리는 다른 프로세스들이
+	// value를 감소시키고 block되었다는 의미
+	// 즉, block되있는 프로세스가 1개 이상이라는 이야기
+	// busy wait에서의 value와는 다른 의미
+		remove a process P from S.L;
+		wakeup(P);
+	}
+}
+```
+
+- block과 wakeup을 다음과 같이 가정
+  - block
+    - 커널은 block을 호출한 프로세스를 suspend시킴
+    - 이 프로세스의 PCB를 semaphore의 wait queue에 삽입
+  - wakeup(P)
+    - block된 프로세스 P를 wakeup시킴
+    - 이 프로세스의 PCB를 ready queue로 옮김
+
+## 15. Busy wait vs Block / wakeup
+
+- block/wakeup overhead vs critical section의 길이
+  - CS의 길이가 긴 경우 Block/Wakeup이 적당
+  - CS의 길이가 매우 짧은 경우 Block/Wakeup 오버헤드가 busy wait의 오버헤드보다 더 커질 수 있음
+  - 일반적으로는 Block/Wakeup방식이 더 좋음
+
+## 16. Semaphore의 두 가지 유형
+
+- Counting semaphore
+  - 도메인이 0이상인 임의의 정수값
+  - 주로 Resource counting에 사용
+- Binary semaphore
+  - 0또는 1값만 가질 수 있는 semaphore
+  - 자원의 개수가 1인 counting semaphore
+  - 주로 mutual exclusion(lock / unlock)에 사용
+
+## 17. Deadlock and Starvation
+
+- Deadlock
+  - 둘 이상의 프로세스가 서로 상대방에 의해 충족될 수 있는 event를 무한히 기다리는 현상
+- S와 Q가 1로 초기화된 semaphore라 하자
+
+  ![1](https://user-images.githubusercontent.com/48282185/173813703-041419c4-f2b0-4655-9d73-699b823bcd38.png)
+
+  - 하드디스크 A에서 B로 카피를 하는 작업을 한다하자. S와 Q는 각 하드디스크에 걸려있는 세마포어이다. 즉 S와 Q를 둘 다 얻어야 작업이 진행될 수 있다.
+  - 자원 획득 순서를 정해주면 해결 가능
+    - 위의 예시에서 P1 P(S) ↔ P(Q)순서 변경
+
+- Starvation
+  - indefinite blocking. 프로세스가 suspend된 이유에 해당하는 세마포어 큐에서 빠져나갈 수 없는 현상
+  - deadlock도 일종의 starvation으로 볼 수 있겠다.
