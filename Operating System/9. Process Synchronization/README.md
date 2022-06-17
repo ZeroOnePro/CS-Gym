@@ -20,9 +20,13 @@
   - [15. Busy wait vs Block / wakeup](#15-busy-wait-vs-block--wakeup)
   - [16. Semaphore의 두 가지 유형](#16-semaphore의-두-가지-유형)
   - [17. Deadlock and Starvation](#17-deadlock-and-starvation)
+  - [18. Bounded Buffer Problem(Producer - Consumer Problem)](#18-bounded-buffer-problemproducer---consumer-problem)
+  - [19. Reader - Writers Problem](#19-reader---writers-problem)
+  - [20. Dining - Philosophers Problem](#20-dining---philosophers-problem)
+  - [21. Monitor](#21-monitor)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sungminyou, at: 2022년 6월 15일 수요일 20시 10분 48초 KST -->
+<!-- Added by: sungminyou, at: 2022년 6월 17일 금요일 10시 14분 26초 KST -->
 
 <!--te-->
 
@@ -270,11 +274,11 @@ void V(semaphore& S){
 
 - Counting semaphore
   - 도메인이 0이상인 임의의 정수값
-  - 주로 Resource counting에 사용
+  - 주로 Resource counting에 사용, 남은 자원의 개수를 세는 용도
 - Binary semaphore
   - 0또는 1값만 가질 수 있는 semaphore
   - 자원의 개수가 1인 counting semaphore
-  - 주로 mutual exclusion(lock / unlock)에 사용
+  - 주로 mutual exclusion(lock / unlock)에 사용, 자원이 1개인 특별한 경우
 
 ## 17. Deadlock and Starvation
 
@@ -291,3 +295,103 @@ void V(semaphore& S){
 - Starvation
   - indefinite blocking. 프로세스가 suspend된 이유에 해당하는 세마포어 큐에서 빠져나갈 수 없는 현상
   - deadlock도 일종의 starvation으로 볼 수 있겠다.
+
+## 18. Bounded Buffer Problem(Producer - Consumer Problem)
+
+![1](https://user-images.githubusercontent.com/48282185/174202784-3194dab7-0435-4fb4-b395-3a1b61e8fd2e.png)
+
+- 두 가지 타입의 프로세스가 각각 여러개 있는 상황을 가정, Producer는 데이터를 생산하여 버퍼에 넣어주고, Consumer는 데이터를 꺼내가는 역할
+- 두 개의 Producer가 동시에 도착하여 버퍼의 같은 위치에 동시에 데이터를 쓰는 상황이 문제가 된다.
+- 두 개의 Consumer가 동시에 같은 위치의 데이터를 꺼내가려할 때 문제가 된다.
+- 여러개의 Producer가 버퍼에 데이터를 모두 채우고 난 후 Consumer가 데이터를 꺼내가지까지 기다려야하는 문제
+- 여러개의 Consumer가 빈 버퍼 상태에서 Producer가 데이터를 만들 때까지 기다려야하는 문제
+- 여기서 producer의 resource는 empty buffer이고, consumer의 resource는 full buffer이다.
+- Shared Data
+  - buffer 자체
+  - buffer의 포인터 변수들(empty, full buffer의 시작 위치 등)
+- Synchronization variables
+  - mutual exclusion
+    - binary semaphore가 필요
+    - shared data의 mutual exclusion을 위해
+  - resource count
+    - integer semaphore가 필요
+    - 남은 full / empty buffer의 수 표시
+
+![2](https://user-images.githubusercontent.com/48282185/174202783-2481db10-36f5-4f2d-b140-9a7de199c39a.png)
+
+- 생산자 소비자 문제를 세마포어를 통해 해결할 수 있다.
+
+## 19. Reader - Writers Problem
+
+- 한 프로세스가 DB(공유 자원)에 write중일 때 다른 프로세스가 접근하면 안됨
+- read는 동시에 여러 프로세스가 해도 상관없음
+- solution
+  - writer가 DB에 접근 허가를 아직 못한 상태에서는 모든 대기 중인 reader들을 다 DB에 접근하게 해준다
+  - writer는 대기 중인 reader가 하나도 없을 때 DB접근이 허용된다
+  - 일단 writer가 DB에 접근 중이면 reader들의 접근이 금지된다
+  - writer가 DB에 빠져나가야만 reader의 접근이 허용된다
+- shared data
+  - DB 자체
+  - read count(DB에 접근 중인 reader의 수)
+- synchronization variables
+  - mutex
+    - 공유 변수 readcount를 접근하는 코드(critical section)의 mutual excultion을 보장하기 위해 사용
+    - binary semaphore
+  - DB
+    - reader와 writer가 공유 DB자체를 올바르게 접근하게 하는 역할
+    - binary semaphore
+
+![3](https://user-images.githubusercontent.com/48282185/174202782-068748a4-ed2e-47cc-84f2-0d14926a294e.png)
+
+- Reader가 지속적으로 도착하는 경우 writer는 계속 대기해야하는 상황에 빠질 수 있음
+- writer가 오래 기다리는 경우 우선순위를 높여(aging) starvation을 방지하는 방법도 생각해 볼 수 있겠다.
+- starvation을 해결하기 위해 reader의 읽기 회수에 제한을 두는 방법도 생각해 볼 수 있겠다.
+
+## 20. Dining - Philosophers Problem
+
+![4](https://user-images.githubusercontent.com/48282185/174202780-ada7637a-28e1-4708-8427-7749024254f6.png)
+
+- 밥을 먹기위해 자신의 왼쪽과 오른쪽 젓가락을 필요로하고, 5명의 철학자가 젓가락을 공유한다.
+- semaphore를 활용한 soultion의 문제점
+  - 모든 철학자가 동시에 배가 고파져 왼쪽 젓가락을 집어버린 경우 deadlock의 가능성이 있다.
+  - 아무도 오른쪽 젓가락을 잡을 수 없다
+- deadlock을 막기 위한 해결방안
+  - 4명의 철학자만이 테이블에 동시에 앉을 수 있게 제약을 만든다
+  - 젓가락을 두 개 모두 집을 수 있을때에만 집을 수 있게한다
+  - 비대칭
+    - 짝수(홀수)철학자는 왼쪽(오른쪽) 젓가락부터 잡도록 한다
+
+## 21. Monitor
+
+![5](https://user-images.githubusercontent.com/48282185/174202779-d931db10-a935-44cc-a813-c16c51fdd8ee.png)
+
+- semaphore의 문제
+  - 코딩하기 힘들다
+  - 정확성의 입증이 어렵다(디버깅이 어렵다)
+  - 자발적 협력이 필요하다
+  - 한번의 실수가 모든 시스템에 치명적 영향을 미친다
+- 언어 차원에서 제공되는 synchronization문제 해결방안
+  ![6](https://user-images.githubusercontent.com/48282185/174202778-fec6da3e-5c60-4cbb-bff0-5e98ced1b7be.png)
+  ![7](https://user-images.githubusercontent.com/48282185/174202775-e0b13c41-558e-4274-a28d-c009c37845b6.png)
+
+  - 동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기 위한 high-level synchronization construct
+  - 모니터 내부에 공유 데이터와 procedure를 정의하고, procedure를 통해서만 공유데이터에 접근할 수 있도록 한다
+  - 기본적으로 모니터에 대한 접근을 허락하지 않아 프로그래머 입장에서는 lock을 걸 필요가 없어서 편하다.
+
+    - 모니터 내에서는 한번에 하나의 프로세스만이 활동 가능
+    - 프로세스가 모니터 안에서 기다릴 수 있도록 하기 위해 condition variable을 사용
+    - condition variable은 wait와 signal연산에 의해서만 접근 가능
+    - wait()를 invoke한 프로세스는 다른 프로세스가 signal()을 Invoke하기 전까지 suspend된다.
+    - signal()은 정확하게 하나의 suspend된 프로세스를 resume한다. suspend된 프로세스가 없다면, 아무일도 일어나지 않는다.
+
+    ```c
+    condition x; // x자원에 대한 condition variable
+
+    x.wait(); // x를 사용할 수 없는 경우 대기줄에 서게하는 역할
+
+    x.signal(); // x를 사용할 수 있게 된 경우 대기줄에서 프로세스 하나를 꺼내오는 역할
+    ```
+
+  - Bounded - Buffer Problem을 monitor를 통해 해결
+    ![8](https://user-images.githubusercontent.com/48282185/174202761-0ed4697f-9e60-486c-9eae-8c7c11df6b5e.png)
+    - 생산자와 소비자의 개수를 신경쓸 필요가 없어짐
