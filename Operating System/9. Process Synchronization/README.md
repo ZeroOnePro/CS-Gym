@@ -371,6 +371,7 @@ void V(semaphore& S){
   - 자발적 협력이 필요하다
   - 한번의 실수가 모든 시스템에 치명적 영향을 미친다
 - 언어 차원에서 제공되는 synchronization문제 해결방안
+
   ![6](https://user-images.githubusercontent.com/48282185/174202778-fec6da3e-5c60-4cbb-bff0-5e98ced1b7be.png)
   ![7](https://user-images.githubusercontent.com/48282185/174202775-e0b13c41-558e-4274-a28d-c009c37845b6.png)
 
@@ -394,4 +395,18 @@ void V(semaphore& S){
 
   - Bounded - Buffer Problem을 monitor를 통해 해결
     ![8](https://user-images.githubusercontent.com/48282185/174202761-0ed4697f-9e60-486c-9eae-8c7c11df6b5e.png)
+
     - 생산자와 소비자의 개수를 신경쓸 필요가 없어짐
+
+  - Dining Phiosophers Problem을 monitor를 통해 해결
+
+    ![1](https://user-images.githubusercontent.com/48282185/174212053-26eeef4b-cc97-48ce-896d-a176dc6b7ea0.png)
+
+    - 각 철학자는 서로의 상태에 영향을 줄 수 있다.
+    - deadlock을 방지하기 위해 양쪽 젓가락 모두 사용가능한지 테스트 한 후에 젓가락을 잡는다
+
+> 출처
+
+> ABRAHAM SILBERSCHATZ ET AL., OPERATING SYSTEM CONCEPTS, NINTH EDITION, WILEY, 2013
+
+> 반효경, 운영체제와 정보기술의 원리, 이화여자대학교 출판부, 2008
