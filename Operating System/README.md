@@ -23,3 +23,11 @@
 [9. 프로세스 동기화 문제](./9.%20Process%20Synchronization/)
 
 [10. 데드락](./10.%20Deadlock/)
+
+[11. 메모리 관리](./11.%20Memory%20Management/)
+
+[12. 가상메모리](./12.%20Virtual%20Memory/)
+
+[13. 파일 시스템](./13.%20File%20System/)
+
+[14. 디스크 관리 및 스케줄링](./14.%20Disk%20Management%20and%20Scheduling/)
