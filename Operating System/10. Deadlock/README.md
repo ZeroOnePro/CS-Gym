@@ -34,7 +34,9 @@
   - 시스템에 2개의 tape drive가 있다.
   - 프로세스 P1과 P2 각각이 하나의 tape drive를 보유한 채 다른 하나를 기다리고 있다.
 - Deadlock Example 2
+
   - binary semaphores A and B
+
     ![2](https://user-images.githubusercontent.com/48282185/174245625-70cfe9f0-a7e4-4066-8e21-502b4111a327.png)
 
 ## 2. Deadlock의 발생 조건 4가지
