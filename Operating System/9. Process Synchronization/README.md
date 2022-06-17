@@ -371,13 +371,9 @@ void V(semaphore& S){
   - 자발적 협력이 필요하다
   - 한번의 실수가 모든 시스템에 치명적 영향을 미친다
 - 언어 차원에서 제공되는 synchronization문제 해결방안
-  <<<<<<< HEAD
 
-=======
-
-> > > > > > > 060daa1e489069763a896fe279dd9196c9cca71a
-> > > > > > > ![6](https://user-images.githubusercontent.com/48282185/174202778-fec6da3e-5c60-4cbb-bff0-5e98ced1b7be.png)
-> > > > > > > ![7](https://user-images.githubusercontent.com/48282185/174202775-e0b13c41-558e-4274-a28d-c009c37845b6.png)
+![6](https://user-images.githubusercontent.com/48282185/174202778-fec6da3e-5c60-4cbb-bff0-5e98ced1b7be.png)
+![7](https://user-images.githubusercontent.com/48282185/174202775-e0b13c41-558e-4274-a28d-c009c37845b6.png)
 
 - 동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기 위한 high-level synchronization construct
 - 모니터 내부에 공유 데이터와 procedure를 정의하고, procedure를 통해서만 공유데이터에 접근할 수 있도록 한다
