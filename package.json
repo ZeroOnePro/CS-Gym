@@ -8,6 +8,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "insert:toc": "sh ./scripts/insert_toc.sh",
-    "update:toc": "sh ./scripts/update_toc.sh"
+    "update:toc": "sh ./scripts/update_toc.sh",
+    "clear": "sh ./scripts/delete_backup.sh"
   }
 }

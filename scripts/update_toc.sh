@@ -1,1 +1,1 @@
-~/gh-md-toc --insert "$INIT_CWD/README.md" && find . -name "$INIT_CWD/README.md.*" -exec rm {} \;
+~/gh-md-toc --insert "$INIT_CWD/README.md"
