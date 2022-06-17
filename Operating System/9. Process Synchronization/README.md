@@ -371,39 +371,43 @@ void V(semaphore& S){
   - 자발적 협력이 필요하다
   - 한번의 실수가 모든 시스템에 치명적 영향을 미친다
 - 언어 차원에서 제공되는 synchronization문제 해결방안
+  <<<<<<< HEAD
 
-  ![6](https://user-images.githubusercontent.com/48282185/174202778-fec6da3e-5c60-4cbb-bff0-5e98ced1b7be.png)
-  ![7](https://user-images.githubusercontent.com/48282185/174202775-e0b13c41-558e-4274-a28d-c009c37845b6.png)
+=======
 
-  - 동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기 위한 high-level synchronization construct
-  - 모니터 내부에 공유 데이터와 procedure를 정의하고, procedure를 통해서만 공유데이터에 접근할 수 있도록 한다
-  - 기본적으로 모니터에 대한 접근을 허락하지 않아 프로그래머 입장에서는 lock을 걸 필요가 없어서 편하다.
+> > > > > > > 060daa1e489069763a896fe279dd9196c9cca71a
+> > > > > > > ![6](https://user-images.githubusercontent.com/48282185/174202778-fec6da3e-5c60-4cbb-bff0-5e98ced1b7be.png)
+> > > > > > > ![7](https://user-images.githubusercontent.com/48282185/174202775-e0b13c41-558e-4274-a28d-c009c37845b6.png)
 
-    - 모니터 내에서는 한번에 하나의 프로세스만이 활동 가능
-    - 프로세스가 모니터 안에서 기다릴 수 있도록 하기 위해 condition variable을 사용
-    - condition variable은 wait와 signal연산에 의해서만 접근 가능
-    - wait()를 invoke한 프로세스는 다른 프로세스가 signal()을 Invoke하기 전까지 suspend된다.
-    - signal()은 정확하게 하나의 suspend된 프로세스를 resume한다. suspend된 프로세스가 없다면, 아무일도 일어나지 않는다.
+- 동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기 위한 high-level synchronization construct
+- 모니터 내부에 공유 데이터와 procedure를 정의하고, procedure를 통해서만 공유데이터에 접근할 수 있도록 한다
+- 기본적으로 모니터에 대한 접근을 허락하지 않아 프로그래머 입장에서는 lock을 걸 필요가 없어서 편하다.
 
-    ```c
-    condition x; // x자원에 대한 condition variable
+  - 모니터 내에서는 한번에 하나의 프로세스만이 활동 가능
+  - 프로세스가 모니터 안에서 기다릴 수 있도록 하기 위해 condition variable을 사용
+  - condition variable은 wait와 signal연산에 의해서만 접근 가능
+  - wait()를 invoke한 프로세스는 다른 프로세스가 signal()을 Invoke하기 전까지 suspend된다.
+  - signal()은 정확하게 하나의 suspend된 프로세스를 resume한다. suspend된 프로세스가 없다면, 아무일도 일어나지 않는다.
 
-    x.wait(); // x를 사용할 수 없는 경우 대기줄에 서게하는 역할
+  ```c
+  condition x; // x자원에 대한 condition variable
 
-    x.signal(); // x를 사용할 수 있게 된 경우 대기줄에서 프로세스 하나를 꺼내오는 역할
-    ```
+  x.wait(); // x를 사용할 수 없는 경우 대기줄에 서게하는 역할
 
-  - Bounded - Buffer Problem을 monitor를 통해 해결
-    ![8](https://user-images.githubusercontent.com/48282185/174202761-0ed4697f-9e60-486c-9eae-8c7c11df6b5e.png)
+  x.signal(); // x를 사용할 수 있게 된 경우 대기줄에서 프로세스 하나를 꺼내오는 역할
+  ```
 
-    - 생산자와 소비자의 개수를 신경쓸 필요가 없어짐
+- Bounded - Buffer Problem을 monitor를 통해 해결
+  ![8](https://user-images.githubusercontent.com/48282185/174202761-0ed4697f-9e60-486c-9eae-8c7c11df6b5e.png)
 
-  - Dining Phiosophers Problem을 monitor를 통해 해결
+  - 생산자와 소비자의 개수를 신경쓸 필요가 없어짐
 
-    ![1](https://user-images.githubusercontent.com/48282185/174212053-26eeef4b-cc97-48ce-896d-a176dc6b7ea0.png)
+- Dining Phiosophers Problem을 monitor를 통해 해결
 
-    - 각 철학자는 서로의 상태에 영향을 줄 수 있다.
-    - deadlock을 방지하기 위해 양쪽 젓가락 모두 사용가능한지 테스트 한 후에 젓가락을 잡는다
+  ![1](https://user-images.githubusercontent.com/48282185/174212053-26eeef4b-cc97-48ce-896d-a176dc6b7ea0.png)
+
+  - 각 철학자는 서로의 상태에 영향을 줄 수 있다.
+  - deadlock을 방지하기 위해 양쪽 젓가락 모두 사용가능한지 테스트 한 후에 젓가락을 잡는다
 
 > 출처
 
