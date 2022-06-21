@@ -23,9 +23,11 @@
   - [18. Unified Buffer Cache를 사용한 방식과 그렇지 않은 방식에서 File IO 과정](#18-unified-buffer-cache를-사용한-방식과-그렇지-않은-방식에서-file-io-과정)
   - [19. file을 memory에 map하여 쓰는 대표적 예시](#19-file을-memory에-map하여-쓰는-대표적-예시)
   - [20. mmap의 장단점](#20-mmap의-장단점)
+  - [21. Ext2 파일시스템(Linux, 1993)](#21-ext2-파일시스템linux-1993)
+  - [22. Ext4](#22-ext4)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: sungminyou, at: 2022년 6월 21일 화요일 12시 28분 46초 KST -->
+<!-- Added by: sungminyou, at: 2022년 6월 21일 화요일 16시 29분 27초 KST -->
 
 <!--te-->
 
