@@ -1,5 +1,21 @@
 # 14. Disk Management and Scheduling
 
+<!--ts-->
+
+- [14. Disk Management and Scheduling](#14-disk-management-and-scheduling)
+  - [1. Disk Structure](#1-disk-structure)
+  - [2. Disk Management](#2-disk-management)
+  - [3. Disk Scheduling](#3-disk-scheduling)
+  - [4. Disk Scheduling Algorithm](#4-disk-scheduling-algorithm)
+  - [5. Disk Scheduling Algorithm의 결정](#5-disk-scheduling-algorithm의-결정)
+  - [6. Swap Area Management](#6-swap-area-management)
+  - [7. RAID(Redundant Array of Independent Disks)](#7-raidredundant-array-of-independent-disks)
+
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 6월 21일 화요일 16시 38분 33초 KST -->
+
+<!--te-->
+
 강의 들어보니 대부분의 설명이 하드디스크 기준이고 요즘에는 SSD를 주로 사용하니 고전 기술이기는하나 그냥 발전 과정에 대해서 살펴보면 될거 같다.
 
 ## 1. Disk Structure
