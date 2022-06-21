@@ -112,11 +112,14 @@
         - user가 주체가 되어 접근 권한이 있는 파일들을 리스트로 관리
     - 셋 중 어떤 방법이든 overhead가 크다
   - grouping
+
     - 일반적으로 사용되는 방법
     - 전체 user를 owner, group, public의 세 그룹으로 구분
     - 각 파일에 대해 세 그룹의 접근 권한(rwx)를 3비트씩으로 표시, 권한을 위해 9비트만 필요
     - UNIX에서의 예시
+
       ![4](https://user-images.githubusercontent.com/48282185/174710426-def2ab70-44ac-4bb1-9b5a-13467ee57163.png)
+
   - password
     - 파일마다 password를 두는 방법(디렉토리 파일에 두는 방법도 가능)
     - 모든 접근 권한에 대해 하나의 pasword: all or nothing, 모두 가능하거나 모두 불가능하거나
