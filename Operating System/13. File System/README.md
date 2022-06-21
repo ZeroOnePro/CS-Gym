@@ -101,6 +101,7 @@
 
 - 각 파일에 대해 누구에게 어떤 유형의 접근(read / write / execution)을 허락할 것인가?
 - access control 방법
+
   - access control matrix
     ![3](https://user-images.githubusercontent.com/48282185/174710428-0fa4b023-bedb-44db-8012-afb7b4a86be9.png)
     - 각 사용자가 각 파일에 대한 권한을 행렬로 저장
@@ -252,13 +253,19 @@
 
 - 빈 블록을 관리하는 방법
 - Bit map or bit vector
+
   ![11](https://user-images.githubusercontent.com/48282185/174710412-00727f7b-72e5-4aca-8034-f5fb355fd2cb.png)
+
   - block의 번호와 비트를 이용하여 비어있는지 아닌지를 나타냄
+
 - linked list
+
   ![12](https://user-images.githubusercontent.com/48282185/174710411-7d3c7762-a7d6-4040-832e-17ae8f39c2b6.png)
+
   - 모든 free block들을 연결
   - 연속적인 가용공간을 찾는 것은 쉽지 않다
   - 공간의 낭비가 없다(따로 리스트를 두지 않고 각 블록안에 포인터가 위치)
+
 - grouping
   - linked list 방법의 변형
   - 첫 번째 free block이 n개의 pointer를 가짐
