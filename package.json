@@ -7,8 +7,8 @@
   "author": "ZeroOnePro <dbtjdals1771@ajou.ac.kr>",
   "license": "UNLICENSED",
   "scripts": {
-    "insert:toc": "sh ./scripts/insert_toc.sh",
-    "update:toc": "sh ./scripts/update_toc.sh",
-    "clear": "sh ./scripts/delete_backup.sh"
+    "insert:toc": "sh ./scripts/insert.toc.sh",
+    "update:toc": "sh ./scripts/update.toc.sh",
+    "delete:backup": "sh ./scripts/delete.backup.sh"
   }
 }

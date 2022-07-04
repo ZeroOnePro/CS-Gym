@@ -67,15 +67,11 @@
 
 ```bash
 
-$ yarn insert:toc
+$ yarn insert:toc # 목차 생성
 
-```
+$ yarn update:toc # 목차 갱신, 백업 파일 생성됨
 
-- 리드미 파일 수정 후 목차 수정
-
-```bash
-
-$ yarn update:toc
+$ yarn delete:backup # 백업 파일 제거
 
 ```
 
