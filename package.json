@@ -5,7 +5,7 @@
   "main": "./",
   "repository": "git@github.com:Sparta-Gym/CS-Gym.git",
   "author": "ZeroOnePro <dbtjdals1771@ajou.ac.kr>",
-  "license": "UNLICENSED",
+  "license": "CC-BY-NC-SA",
   "scripts": {
     "insert:toc": "sh ./scripts/insert.toc.sh",
     "update:toc": "sh ./scripts/update.toc.sh",
