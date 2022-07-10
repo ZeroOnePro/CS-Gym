@@ -79,8 +79,8 @@
   - 서버가 하나의 파일을 내보내는데 걸리는 시간 $F \over u_s$
   - 제일 다운로드가 느린 피어의 다운로드 시간은 $F \over d_{min}$
   - 총 N x F 비트의 크기가 다운로드 받아져야함
-    - 최대 upload 비율은 $u_s + \sum_{i=1}^{N} {u_i}$
-  - 사이즈가 F인 파일을 N개의 클라이언트에게 보내는 시간은 $D_{p2p} \geq max({N \times F \over u_s}, {F \over d_{min}}, {N \times F \over u_s + \sum_{i=1}^{N} {u_i}})$
+    - 최대 upload 비율은 $u_s + {\sum_{i=1}^{N} {u_i}}$
+  - 사이즈가 F인 파일을 N개의 클라이언트에게 보내는 시간은 $D_{p2p} \geq max({N \times F \over u_s}, {F \over d_{min}}, {N \times F \over u_s + {\sum_{i=1}^{N} {u_i}}})$
 - 비교
 
   ![4](https://user-images.githubusercontent.com/48282185/178162050-db255d6b-cc83-4ae1-86af-6fa2845c8d96.png)
