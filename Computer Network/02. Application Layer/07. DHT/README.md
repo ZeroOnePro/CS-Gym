@@ -11,8 +11,8 @@
   - [6. Circular DHT의 파일 공유 예시](#6-circular-dht의-파일-공유-예시)
   - [7. Circular DHT with shortcut](#7-circular-dht-with-shortcut)
   - [8. shortcut 예시](#8-shortcut-예시)
-  - [8. Peer churn](#9-peer-churn)
-  - [9. DHT의 응용](#10-dht의-응용)
+  - [9. Peer churn](#9-peer-churn)
+  - [10. DHT의 응용](#10-dht의-응용)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
 <!-- Added by: sungminyou, at: 2022년 7월 12일 화요일 04시 44분 35초 KST -->
