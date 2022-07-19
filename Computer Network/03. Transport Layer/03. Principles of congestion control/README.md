@@ -43,7 +43,7 @@
   - sender의 application이 보내는 데이터량과 receiver의 application이 보내는 데이터의 양은 같다
 - 혼잡으로 인해 보내는 노력 대비 받는게 점점 적어지게 때문에 비용이 상당히 크다
   - 새로운 데이터를 보내지 못하게 계속 재전송만 하게 됨
-- congestion control의 목적은 $\lambda^{'}_{in}$과 $\lambda_{out}$이 비례 관계를 이루게 유지하는 선에서 보내는 데이터의 량을 조절하겠다
+- congestion control의 목적은 $\lambda_{out}$과 $\lambda^{'}_{in}$이 비례 관계를 이루게 유지하는 선에서 보내는 데이터의 량을 조절하겠다
   - 재전송을 최대한 적게 만들어 주는것
 
 ## 3. Approach towards congestion control
