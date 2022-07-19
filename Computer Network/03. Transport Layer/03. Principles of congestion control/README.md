@@ -33,17 +33,17 @@
 ![1](https://user-images.githubusercontent.com/48282185/179679016-8b834b20-1844-4fb6-9ecd-a58f70db14a5.png)
 ![2](https://user-images.githubusercontent.com/48282185/179679000-325dc2b8-13f2-4647-8216-5ae3ada520a1.png)
 
-- $\lambda_{in} <= \lambda^{'}_{in}$
+- $\lambda_{in} <= \lambda^{\prime}_{in}$
   - 재전송이 있을 수 있기 때문에 application이 보내는 데이터보다 transport가 보내는 데이터는 같거나 크다
-- $\lambda^{'}_{in} >= \lambda^{'}_{out}$
+- $\lambda^{\prime}_{in} >= \lambda^{\prime}_{out}$
   - 중간에 패킷 손실이 날 수 있기에 sender의 transport가 보내는 데이터의 량이 receiver의 transport가 받는 데이터의 량과 같거나 크다
-- $\lambda^{'}_{out} >= \lambda_{out}$
+- $\lambda^{\prime}_{out} >= \lambda_{out}$
   - 재전송이 있을 수 있기 때문에 receiver transport가 받는 데이터의 양이 receiver의 application이 받는 데이터의 양과 같거나 크다
 - $\lambda_{in} = \lambda_{out}$
   - sender의 application이 보내는 데이터량과 receiver의 application이 보내는 데이터의 양은 같다
 - 혼잡으로 인해 보내는 노력 대비 받는게 점점 적어지게 때문에 비용이 상당히 크다
   - 새로운 데이터를 보내지 못하게 계속 재전송만 하게 됨
-- congestion control의 목적은 $\lambda_{out}$과 $\lambda^{'}_{in}$이 비례 관계를 이루게 유지하는 선에서 보내는 데이터의 량을 조절하겠다
+- congestion control의 목적은 $\lambda_{out}$과 $\lambda^{\prime}_{in}$이 비례 관계를 이루게 유지하는 선에서 보내는 데이터의 량을 조절하겠다
   - 재전송을 최대한 적게 만들어 주는것
 
 ## 3. Approach towards congestion control
