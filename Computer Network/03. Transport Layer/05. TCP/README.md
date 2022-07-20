@@ -62,7 +62,7 @@
 ![2](https://user-images.githubusercontent.com/48282185/179925022-0c91db66-4f23-4155-80ab-5ef4d4e3d4d3.png)
 
 - MSS 20Byte일 때 순서번호
-- 첫 순서 번호가 결정되면, 기본적으로 그 이후로는 공차가 MSS인 등차수열로 순서 번호의 수열이 만들어짐, 근데 push flag나 urg flag같이 고정된 크기가 아닌 것들도 있어서 seq + length로 다음 순서 번호가  
+- 첫 순서 번호가 결정되면, 기본적으로 그 이후로는 공차가 MSS인 등차수열로 순서 번호의 수열이 만들어짐, 근데 push flag나 urg flag같이 고정된 크기가 아닌 것들도 있어서 seq + length로 다음 순서 번호가 결정됨
 - flags
   - U(URG): 긴급 데이터
   - A(ACK): ACK이 유효한 데이터인지, 응답에서는 true로 설정
