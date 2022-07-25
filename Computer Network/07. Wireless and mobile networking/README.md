@@ -10,4 +10,4 @@
 
 ## 03. mobile IP
 
-[mobile의 IP에 대해 살펴본다](./03.%20mobile%20IP/)
+[mobile에서의 IP에 대해 살펴본다](./03.%20mobile%20IP/)
