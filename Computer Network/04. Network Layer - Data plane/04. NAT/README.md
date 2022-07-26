@@ -1,5 +1,20 @@
 # 4. NAT
 
+<!--ts-->
+
+- [4. NAT](#4-nat)
+  - [1. NAT](#1-nat)
+  - [2. NAT이 필요한 이유와 장점](#2-nat이-필요한-이유와-장점)
+  - [3. NAT 구현](#3-nat-구현)
+  - [4. 주소 변환](#4-주소-변환)
+  - [5. NAT traversal problem](#5-nat-traversal-problem)
+  - [6. ICMP](#6-icmp)
+
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 7월 26일 화요일 12시 32분 09초 KST -->
+
+<!--te-->
+
 ## 1. NAT
 
 ![1](https://user-images.githubusercontent.com/48282185/180916816-5f8ff408-4502-4bd0-b5b2-b339f59403f9.png)
