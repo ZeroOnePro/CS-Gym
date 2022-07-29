@@ -10,5 +10,11 @@
     "insert:toc": "sh ./scripts/insert.toc.sh",
     "update:toc": "sh ./scripts/update.toc.sh",
     "delete:backup": "sh ./scripts/delete.backup.sh"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.2"
   }
 }
