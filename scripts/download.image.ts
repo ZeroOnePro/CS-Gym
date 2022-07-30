@@ -3,9 +3,7 @@ import fs from "fs";
 import extract_link from "./parse.markdown";
 
 const getImage = async (url: string) => {
-  const { data } = await axios.get(url, {
-    responseType: "stream",
-  });
+  const { data } = await axios.get(url);
   return data;
 };
 
@@ -13,13 +11,14 @@ const getImage = async (url: string) => {
   const images = await axios.all(
     extract_link.map((link: string) => getImage(link))
   );
+
   images.map((image, index: number) =>
     image.pipe(fs.createWriteStream(__dirname + `../images/${index + 1}.png`))
   );
 })();
 
 /**
- * 노션 이미지는 1시간 동안만 유효해서 notion api써서 유효 시간 늘리는 방법이 있다
+ * 노션 이미지는 1시간 동안만 유효해서 지금 당장은 직접 다운로드 받는 수 밖에 없는 것  같다
  * 일단 이미지 다운로드 기능하면서 파일 전송 원리 알게됨
  * browser에는 blob객체를 사용하지만, node.js에서는 stream으로 받을 수 있음
  * https://developer-alle.tistory.com/m/435
