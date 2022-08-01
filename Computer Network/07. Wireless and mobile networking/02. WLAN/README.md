@@ -114,6 +114,8 @@
 - inter-DSS addressing example
   ![5](https://user-images.githubusercontent.com/48282185/182093620-28e8d6f0-009e-47c1-a5cd-5d37b2918b42.png)
 
+  - AP의 protocol conversion을 볼 수 있다
+
 ## 9. 802.11 advanced capabilities
 
 - power management
