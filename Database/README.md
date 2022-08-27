@@ -10,10 +10,14 @@
 
 [3. 물리적 데이터베이스 설계](./03.%20Implement%20Physical%20Database%20/)
 
-[4. 릴레이션 정규화, 뷰, 카탈로그](./04.%20Relation%20Normalization%2C%20View%20and%20Catalog/)
+[4. 릴레이션 정규화](./04.%20Relation%20Normalization/)
 
-[5. 트랜잭션](./05.%20Transaction/)
+[5. 뷰와 시스템 카탈로그](./05.%20View%20and%20System%20catalog/)
 
-[6. 데이터베이스 저장과 접근, 빅데이터](./06.%20Store%20and%20Access%20Database%2C%20BigData/)
+[6. 트랜잭션](./06.%20Transaction/)
 
-[7. NoSQL 데이터베이스 패턴들](./07.%20NoSQL%20Database%20Patterns/)
+[7. 데이터베이스 저장과 접근: 해싱](./07.%20Store%20and%20Access%20Database/)
+
+[8. 빅데이터 관리 서론](./08.%20BigDate/)
+
+[9. NoSQL 데이터베이스 패턴들](./07.%20NoSQL%20Database%20Patterns/)
