@@ -1,5 +1,17 @@
 # 1. 관계대수와 SQL 1
 
+<!--ts-->
+
+- [1. 관계대수와 SQL 1](#1-관계대수와-sql-1)
+  - [1. 관계 대수와 SQL](#1-관계-대수와-sql)
+  - [2. 관계 대수](#2-관계-대수)
+  - [3. 관계 대수 연산](#3-관계-대수-연산)
+
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 8월 27일 토요일 22시 18분 41초 KST -->
+
+<!--te-->
+
 - 여기서 사용되는 용어들 정리
 
   [용어 정리](https://jhnyang.tistory.com/108)
@@ -149,3 +161,13 @@
         ![9](https://user-images.githubusercontent.com/48282185/186122627-bdcf9ed6-5641-4fc8-b452-b4b3c835e670.png)
 
         - 릴레이션 R와 S의 완전 외부 조인 연산은 R과 S의 모든 튜플들을 결과에 포함시키고, 만일 상대 릴레이션에 관련된 튜플이 없으면 결과 릴레이션에서 상대 릴레이션의 애트리뷰트들은 null 값으로 채운다
+
+> 출처
+>
+> - 이화여대 용환승 교수님 강의
+> - 홍의경 저, MS SQL Server 기반 데이터베이스 배움터, 생능출판사, 2012년,
+> - 이석호 저, 데이터베이스 시스템, 정익사, 2009.
+> - A. Silberschatz, H. Korth, S. Sudarshan, "Database System Concepts," 6th Ed., McGraw-Hill, 2010.
+> - Elmasri and Navathe, “ Fundamentals of Database Systems”, 6th ed. Addison-Wesley, 2010.
+> - C.J.Date, “An Introduction to Database Systems (8th Edition)”, Addison-Wesley, 2003.
+> - Won Kim, "Modern Database Systems," ACM Press, 1994

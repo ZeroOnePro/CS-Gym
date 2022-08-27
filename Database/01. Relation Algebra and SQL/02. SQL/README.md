@@ -1,5 +1,20 @@
 # 2. SQL
 
+<!--ts-->
+
+- [2. SQL](#2-sql)
+  - [1. SQL 개요](#1-sql-개요)
+  - [2. SQL의 구성 요소](#2-sql의-구성-요소)
+  - [3. SELECT문](#3-select문)
+  - [4. INSERT, DELETE, UPDATE 문](#4-insert-delete-update-문)
+  - [5. trigger, assertion](#5-trigger-assertion)
+  - [6. embedded SQL](#6-embedded-sql)
+
+<!-- Created by https://github.com/ekalinin/github-markdown-toc -->
+<!-- Added by: sungminyou, at: 2022년 8월 27일 토요일 22시 18분 57초 KST -->
+
+<!--te-->
+
 ## 1. SQL 개요
 
 - SQL은 현재 DBMS 시장에서 관계 DBMS가 압도적인 우위를 차지하는데 중요한 요인 중 하나
@@ -196,3 +211,13 @@
   - CLOSE cursor는 커서를 닫음
   - 파일 입출력과 과정이 비슷하다
 - SQL 통신 영역(SQLCA)를 이용해서 호스트 프로그램과 DBMS가 통신해서 서로 정상적으로 됐는지 파악한다
+
+> 출처
+>
+> - 이화여대 용환승 교수님 강의
+> - 홍의경 저, MS SQL Server 기반 데이터베이스 배움터, 생능출판사, 2012년,
+> - 이석호 저, 데이터베이스 시스템, 정익사, 2009.
+> - A. Silberschatz, H. Korth, S. Sudarshan, "Database System Concepts," 6th Ed., McGraw-Hill, 2010.
+> - Elmasri and Navathe, “ Fundamentals of Database Systems”, 6th ed. Addison-Wesley, 2010.
+> - C.J.Date, “An Introduction to Database Systems (8th Edition)”, Addison-Wesley, 2003.
+> - Won Kim, "Modern Database Systems," ACM Press, 1994
