@@ -18,6 +18,6 @@
 
 [7. 데이터베이스 저장과 접근: 해싱](./07.%20Store%20and%20Access%20Database/)
 
-[8. 빅데이터 관리 서론](./08.%20BigDate/)
+[8. 빅데이터 관리 서론](./08.%20BigData/)
 
 [9. NoSQL 데이터베이스 패턴들](./07.%20NoSQL%20Database%20Patterns/)
