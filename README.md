@@ -72,7 +72,7 @@
 
 + private link
 
-[DeepDiveCS](https://github.com/Sparta-Gym/DeepDiveCS)
+  [DeepDiveCS](https://github.com/Sparta-Gym/DeepDiveCS)
 
 ## 스크립트
 
