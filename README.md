@@ -68,6 +68,12 @@
 
 + 이런 느낌일까? [멀티프로세싱 웹 스크래퍼](https://yousungmin.notion.site/with-python-parallel-programming-6938cc013b734022bf8c48a60267d627)를 써봤는데 여기서 발전시켜 나가보자
 
+## 깊은 정리 / 스터디 내용 정리
+
++ private link
+
+[DeepDiveCS](https://github.com/Sparta-Gym/DeepDiveCS)
+
 ## 스크립트
 
 ```bash
