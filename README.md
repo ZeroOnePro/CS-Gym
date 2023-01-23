@@ -68,11 +68,7 @@
 
 + 이런 느낌일까? [멀티프로세싱 웹 스크래퍼](https://yousungmin.notion.site/with-python-parallel-programming-6938cc013b734022bf8c48a60267d627)를 써봤는데 여기서 발전시켜 나가보자
 
-## 깊은 정리 / 스터디 내용 정리
-
-+ private link
-
-  [DeepDiveCS](https://github.com/Sparta-Gym/DeepDiveCS)
+## 오프라인 스터디 내용은 저작권 이슈 해결한 다음 문제없으면 배포하는 걸로 결정
 
 ## 스크립트
 
